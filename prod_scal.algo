@@ -1,0 +1,28 @@
+FUNCTION dot_scal(V1,V2) : INTEGER
+VAR
+    i,dot: INTEGER;
+BEGIN
+    dot:=0;
+    FOR i FROM 0 TO V1.length STEP 1  DO
+        dot:=dot+V1[i]*V2[i];
+    END_FOR
+    RETURN dot ;
+END
+
+ALGORITHM algorithm_name
+VAR
+    T1,T2 : ARRAY_OF INTEGER[];
+    ps:INTEGER;
+BEGIN
+    REPEAT
+        READ(T1);
+        READ(T2);
+    UNTIL (V1.length=V2.length)
+    ps:=dot_scal(T1,T2);
+    IF (ps=0) THEN
+        WRITE('orthogonal')
+        WRITE('not orthogonal')
+        ELSE
+        WRITE('not orthogonal') 
+    END_IF
+END
